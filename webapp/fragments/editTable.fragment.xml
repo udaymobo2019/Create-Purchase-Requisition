@@ -1,0 +1,135 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	controllerName="com.sap.build.standard.createPrGrunt.controller.Page1">
+	<Dialog id="addcondialog1" class="sapUiSizeCompact" afterClose="dialogAfterclose" title="Details">
+		<content>
+			<HBox alignItems="Stretch" direction="Row" fitContainer="true" width="auto" height="auto" justifyContent="Center" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<form:Form width="100%" editable="true" visible="true">
+						<form:title>
+							<core:Title text="Edit Item Details" level="Auto" icon="sap-icon://functional-location"/>
+						</form:title>
+						<form:formContainers>
+							<form:FormContainer visible="true">
+								<form:formElements>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Item No." design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="itemFragEdit" value="" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+												required="false" valueStateText="Invalid entry" maxLength="0"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Material" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="matItemFragEdit" placeholder="Select Material" editable="true" enabled="true" visible="true" width="auto" showValueHelp="true"
+												valueState="None" valueHelpRequest="materialF4HelpEdit"></Input>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Description" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="matDescItemFragEdit" value="" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+												valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Quantity" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="quanItemFragEdit" value="2.00" type="Text" liveChange="quanLimitEdit" showValueHelp="false" enabled="true" visible="true"
+												width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Price" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="priceItemFragEdit" value="" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+												required="false" valueStateText="Invalid entry" maxLength="3"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="UOM" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="uomItemFragEdit" value="ST" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+												required="false" valueStateText="Invalid entry" maxLength="0"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="false">
+										<form:label>
+											<Label text="Plant" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="plantDataItemFragEdit" value="" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+												valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="4"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="false">
+										<form:label>
+											<Label text="Currency" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="currencyItemFragEdit" value="" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+												valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="4"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="false">
+										<form:label>
+											<Label text="Purchase Group" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input id="purchGrpItemFragEdit" value="" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+												valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="4"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Vendor" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<!--	<Input id="vendorItemFrag" value="" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+												required="false" valueStateText="Invalid entry" maxLength="4"/>-->
+											<ComboBox id="vendorItemFragEdit" placeholder="Select Vendor" editable="true"  enabled="true" visible="true" width="100%"
+												valueState="None" maxWidth="100%"></ComboBox>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Purchase Org." design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<!--<Input id="purOrgItemFragEdit" value="" type="Text" showValueHelp="false" editable="true" visible="true" width="auto" valueHelpOnly="false"
+												required="false" valueStateText="Invalid entry" maxLength="4"/>-->
+											<ComboBox id="purOrgItemFragEdit" placeholder="Purchase Org." editable="true"  enabled="true" visible="true" width="100%"
+												valueState="None" maxWidth="100%"></ComboBox>
+										</form:fields>
+									</form:FormElement>
+								</form:formElements>
+								<form:title/>
+							</form:FormContainer>
+						</form:formContainers>
+						<form:layout>
+							<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+						</form:layout>
+					</form:Form>
+				</items>
+				<layoutData/>
+			</HBox>
+		</content>
+		<buttons>
+			<Button text="Ok" press="itemTableCloseEdit" type="Accept"/>
+			<Button text="Cancel" press="itemTableCancelEdit" type="Reject"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
